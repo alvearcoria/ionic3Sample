@@ -18,5 +18,19 @@
 </ion-header>
 
 <ion-content padding>
-<button ion-button (click)="gotopage2()">Ir pagina 2</button>
+<button ion-button full outline (click)="actionSheet()" >Ir pagina 2</button>
+
+<form padding (ngSubmit)="onSubmit(testForm)" #testForm = "ngForm">
+  <ion-item>
+    <ion-label floating >Nombre</ion-label>
+    <ion-input #inputFocus type="text" name="username" [(ngModel)]= "username">Nombre:</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Telefono</ion-label>
+    <ion-input type="number" planceholder="0000" name="phone" [(ngModel)]= "phone">Telefono:</ion-input>
+  </ion-item>
+  <ion-item>
+      <button ion-button full type= 'submit'>Enviar datos</button>
+  </ion-item>
+</form>
 </ion-content>
